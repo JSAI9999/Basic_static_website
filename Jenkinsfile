@@ -17,7 +17,12 @@ stages {
         }
     }
 
+    stage('Docker Run'){
+    steps {
+        sh 'docker run -itd --name static_website -p 8089:80 static-website'
+
+}
 }
 
-
+}
 }
