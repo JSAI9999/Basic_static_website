@@ -13,13 +13,15 @@ stages {
 
     stage('Build Docker Image') {
         steps {
-            sh 'docker build -t static-website2 .'
+            sh 'docker rmi -f static-website || true'
+            sh 'docker build -t static-website .'
         }
     }
 
     stage('Docker Run'){
     steps {
-        sh 'docker run -itd --name static_website -p 8089:80 static-website2'
+         sh 'docker rm -f static_website || true'
+        sh 'docker run -itd --name static_website -p 8089:80 static-website'
 
 }
 }
