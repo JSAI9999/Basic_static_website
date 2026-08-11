@@ -8,7 +8,7 @@ stages {
     stage('Clone') {
         steps {
             git branch: 'main',
-                url: 'YOUR_GITHUB_REPOSITORY_UR'
+                url: 'https://github.com/akramsyed8046/Basic_static_website.git'
         }
     }
 
